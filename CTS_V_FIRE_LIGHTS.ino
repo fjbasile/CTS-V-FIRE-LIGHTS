@@ -34,14 +34,14 @@ void setup()
  
 void loop()
 { 
-    red = random(RANDLOW, RANDHI); //random red color
-    blue = random(RANDLOW, RANDHI); //random blue color
-    green = random(RANDLOW, RANDHI); //random green color
-
     //sets the color of each light
     for (int light = 0; light < LED_COUNT; light ++)
     {
+      red = random(RANDLOW, RANDHI); //random red color
+      blue = random(RANDLOW, RANDHI); //random blue color
+      green = random(RANDLOW, RANDHI); //random green color
       strip.setPixelColor(light, red, blue, green);
+      strip.show();
     }
     delay(random(lowDel,highDel)); 
 }
