@@ -21,6 +21,11 @@ int green;
 
 void setup()
 {
+
+  #if defined(__AVR_ATtiny85__) && (F_CPU == 16000000)
+  clock_prescale_set(clock_div_1);
+  #endif
+  
   strip.begin(); //initiate the strip
   strip.setBrightness(BRIGHTNESS); //set the brightness
   strip.show(); //sets pixels to off
