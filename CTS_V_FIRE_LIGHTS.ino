@@ -1,4 +1,4 @@
-#include <Adafruit_CircuitPlayground.h>
+#include <Adafruit_NeoPixel.h>
 
 //Hardware Config
 #define LED_PIN 1 //digital PWM output pin
@@ -7,11 +7,11 @@
 #define BRIGHTNESS 127 //led brightness
 
 //Delay perameters 
-#define DELAY  10; //delay interval between next loop iteration
-#define lowDel 5; //low delay interval in ms
-#define highDel 400; //high delay interval in ms
-#define RANDLOW 30; //lowest random RGB value
-#define RANDHI 256; //highest random RGB value
+#define DELAY  10 //delay interval between next loop iteration
+#define lowDel 5 //low delay interval in ms
+#define highDel 400 //high delay interval in ms
+#define RANDLOW 30 //lowest random RGB value
+#define RANDHI 256 //highest random RGB value
 
 Adafruit_NeoPixel strip(LED_COUNT, LED_PIN, NEO_GRB + NEO_KHZ800);
 
@@ -23,7 +23,7 @@ void setup()
 {
   strip.begin(); //initiate the strip
   strip.setBrightness(BRIGHTNESS); //set the brightness
-  strip.show() //start the strip
+  strip.show(); //sets pixels to off
   randomSeed(analogRead(ANALOG_PIN)); //random number seed generation
 }
  
@@ -40,3 +40,4 @@ void loop()
     }
     delay(random(lowDel,highDel)); 
 }
+ 
