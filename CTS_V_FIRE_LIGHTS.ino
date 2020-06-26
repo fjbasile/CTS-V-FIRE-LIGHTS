@@ -4,14 +4,14 @@
 #define LED_PIN 1 //digital PWM output pin
 #define LED_COUNT 8 //total number of NeoPixels
 #define ANALOG_PIN 3 //analog seed pin used to generate random #'s
-#define BRIGHTNESS 127 //led brightness
+#define BRIGHTNESS 64 //led brightness
 
 //Delay perameters 
-#define DELAY  10 //delay interval between next loop iteration
+#define DELAY  150 //delay interval between next loop iteration
 #define lowDel 5 //low delay interval in ms
-#define highDel 400 //high delay interval in ms
+#define highDel 150 //high delay interval in ms
 #define RANDLOW 30 //lowest random RGB value
-#define RANDHI 256 //highest random RGB value
+#define RANDHI 255 //highest random RGB value
 
 Adafruit_NeoPixel strip(LED_COUNT, LED_PIN, NEO_GRB + NEO_KHZ800);
 
